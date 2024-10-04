@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "89cb2944-b4d4-4a83-a093-8d61d9bbc1bd",
+		"name": "ELDAR - EJ 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4537630"
+	},
+	"item": [
+		{
+			"name": "registrar persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Juani\",\n    \"apellido\": \"Capet\",\n    \"dni\": \"31310200\",\n    \"fechaNacimiento\": \"1986-10-06\",\n    \"email\": \"juanpasilva22@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/personas/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"personas",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar tarjeta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"marca\": \"NARA\",\n    \"numero\": \"371111111111114\",\n    \"fechaVencimiento\": \"2030-05-01\",\n    \"titular\": {\n        \"nombre\": \"Juani\",\n        \"apellido\": \"Capet\",\n        \"dni\": \"31310200\",\n        \"fechaNacimiento\": \"1986-10-06\",\n        \"email\": \"juanpasilva22@gmail.com\"\n    },\n    \"cvv\": \"110\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tarjetas/tarjeta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"tarjeta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar tarjetas por dni",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tarjetas/listar?dni=31310200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"listar"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "31310200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar personas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/personas/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"personas",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener tasas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tarjetas/tasas?fecha=2024-08-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"tasas"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2024-08-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar compra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"monto\": 3000,\n    \"detalle\": \"Compra en ferreteria Varios.\",\n    \"tarjeta\": {\n        \"marca\": \"NARA\",\n        \"numero\": \"371111111111114\",\n        \"fechaVencimiento\": \"2030-05-01\",\n        \"titular\": {\n            \"nombre\": \"Juani\",\n            \"apellido\": \"Capet\",\n            \"dni\": \"31310200\",\n            \"fechaNacimiento\": \"1986-10-06\",\n            \"email\": \"juanpasilva22@gmail.com\"\n        },\n        \"cvv\": \"110\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tarjetas/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener tasa por operacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tarjetas/tasa-operacion?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"tasa-operacion"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
